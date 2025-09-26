@@ -1,0 +1,18 @@
+.form-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.ant-form-item-label > label {
+  color: var(--text-color);
+}
+
+.ant-input {
+  background-color: var(--card-background);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.ant-input:hover, .ant-input:focus {
+  border-color: var(--primary-color);
+} 

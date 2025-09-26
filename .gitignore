@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Build folders
+dist/
+build/
+client/build/
+
+# Docker
+docker-compose.override.yml
+*.env.docker
+**/Dockerfile*
+
+# Docker volumes and temporary files
+docker-data/
+tmp/
+*.pid
+
+# Logs
+logs/
+*.log
+*.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Misc
+*.swp
+*.bak
+*.tmp
+
+# Coverage (if using testing tools)
+coverage/

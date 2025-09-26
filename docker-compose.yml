@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/app          # mount local React source
+      - /app/node_modules      # use container's node_modules
+    command: ["npm", "start"]  # run React dev server (hot reload)
+    ports:
+      - "3000:3000"            # React dev server runs on localhost:3000
+    depends_on:
+      - server
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # needed for React file watching in Docker
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"] # nodemon for hot reload
+    ports:
+      - "5000:5000" # Backend API available on localhost:5000
+    environment:
+      - MONGB_UR=mongodb://mongo:27017/users
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

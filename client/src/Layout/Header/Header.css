@@ -1,0 +1,16 @@
+.header {
+  padding: 0 24px;
+  background: inherit;
+}
+
+.header .ant-btn {
+  margin: 0 8px;
+}
+
+.header .ant-switch {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.header .ant-switch-checked {
+  background-color: #1890ff;
+} 
