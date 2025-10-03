@@ -4,11 +4,6 @@ npm-debug.log*
 yarn-error.log*
 
 # Environment variables
-.env
-.env.local
-.env.development
-.env.production
-.env.test
 
 # Build folders
 dist/
@@ -47,3 +42,4 @@ Thumbs.db
 
 # Coverage (if using testing tools)
 coverage/
+config.bat
